@@ -25,6 +25,7 @@ In order to fully setup backend, you need to add following environment variables
 - `JWT_SECRETE_TOKEN` is the jsonwebtoken secret.
 - `DATABASE_URL` is the url to your database. For this project the database is mysql.
 - `PRODUCTION_URL` is obtained deploying the frontend
+- afterwards connect frontend
 
 ### Firebase config env vars
 
