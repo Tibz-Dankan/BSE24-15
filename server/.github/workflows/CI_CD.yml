@@ -9,6 +9,7 @@ on:
     branches:
       - main  # Run the pipeline for pull requests targeting the main branch
 
+
 jobs:
   build:
     runs-on: ubuntu-latest  # Specify the environment to run the job
@@ -25,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Prisma migrations
+      - name: Run Prisma migrations 
         run: npm run pretest  # Run Prisma migrations before testing
 
       - name: Run tests
