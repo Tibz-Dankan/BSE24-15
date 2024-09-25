@@ -1,4 +1,4 @@
-name: Node.js CI_CD
+name: main
 
 # Define the event that triggers the workflow
 on:
