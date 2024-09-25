@@ -1,33 +1,20 @@
 name: main
 
 # Define the event that triggers the workflow
-on:
-  push:
-    branches:
-      - main  # Run the pipeline when pushing to the main branch
-  pull_request:
-    branches:
-      - main  # Run the pipeline for pull requests targeting the main branch
-
+on: push
 jobs:
-  build:
+  super-lint:
+    name: Lint code base
     runs-on: ubuntu-latest  # Specify the environment to run the job
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v2  # Checkout the repository's code
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'  # Specify the Node.js version, change if needed
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Prisma migrations
-        run: npm run pretest  # Run Prisma migrations before testing
-
-      - name: Run tests
-        run: npm test  # Run Jest tests
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
 
