@@ -17,12 +17,8 @@ jobs:
       - name: Install Dependencies
         run: npm install -f
 
-      # - name: Run ESLint Check
-      #   run: npm run lint
-
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: src/routes/__test__/
+      - name: Run ESLint Check
+        run: npm run lint
 
       - name: Run tests
         run: npm run test

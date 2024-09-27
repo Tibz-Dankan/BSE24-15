@@ -7,7 +7,7 @@
     "start": "node src/app.js",
     "server": "nodemon src/app.js",
     "test": "vitest",
-    "lint": "eslint src/routes/__test__/"
+    "lint": "node ./node_modules/eslint/bin/eslint src/routes/__test__/"
   },
   "keywords": [],
   "author": "",
